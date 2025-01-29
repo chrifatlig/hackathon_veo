@@ -1,0 +1,488 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Veo-Hackathon{% endblock %}
+
+{% block body %}
+    <main class="main">
+
+
+        <section id="hero" class="hero section dark-background">
+
+            <div id="hero-carousel" data-bs-interval="5000" class="container carousel carousel-fade"
+                 data-bs-ride="carousel">
+
+                <div class="carousel-item active">
+                    <div class="carousel-container">
+                        <div class="row gy-4">
+                            <div class="col-lg-8 mt-5"
+                                 data-aos="zoom-out" >
+                                <h2 class="animate__animated animate__fadeInDown text-right"  style="text-align: left;"> VEO AI Hackathon <br> Project.</h2>
+                                <h3 class="animate__animated animate__fadeInDown text-right"  style="text-align: left;"><strong>Code.</strong> <span class="create"> <strong> Create.</strong></span><span class="innovate"> <strong> Innovate. </strong></span></h3>
+
+                                <p class="animate__animated animate__fadeInUp "style="text-align: left;  word-spacing: 5.5px;font-size: 15px; ">
+                                    Unleash AI's potential in a 2-day innovation and collaboration event!
+                                    Join Veo’s AI Hackathon Challenge and turn your vision into reality.
+                                    Develop your groundbreaking proposal based on the principles of digital technologies, all while benefiting from the valuable support of mentors and experts from the tech industry.
+
+                                </p>
+                                <p  style="text-align: left;">
+                                    <strong class="create" >Event Date :</strong> <span class="me-5"> <strong> February 22 <sup>nd</sup> </strong></span>
+                                    <strong class=" create"> Venue :</strong> <span> <strong> Arena LAC 1 </strong></span>
+                                </p>
+
+                                <div class="animate__animated animate__fadeInUp " style="text-align: left;" >
+
+                                    <a href="#challenges"
+                                       class="btn-learnmore animate__animated animate__fadeInUp scrollto"> Learn more </a>
+                                    <a href="{{ path('app_participants_new') }}" target="_blank"
+                                       class="btn-get-started animate__animated animate__fadeInUp scrollto"> Register now </a>
+
+                                </div>
+
+
+                            </div>
+                            <div class="col-lg-4 order-1 order-lg-2 hero-img mt-5" data-aos="zoom-out" data-aos-delay="200">
+                                <div class="image-container mt-5">
+                                    <img src="{{ asset('assets/img/halo.svg') }}" class="image-bottom" alt="Halo" width="100%">
+                                    <img src="{{ asset('assets/img/robo.svg') }}" class="image-top animated-image" alt="Robo" width="50%">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                 viewBox="0 24 150 28 " preserveAspectRatio="none">
+                <defs>
+                    <path id="wave-path"
+                          d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+                </defs>
+                <g class="wave1">
+                    <use xlink:href="#wave-path" x="50" y="3"></use>
+                </g>
+                <g class="wave2">
+                    <use xlink:href="#wave-path" x="50" y="0"></use>
+                </g>
+                <g class="wave3">
+                    <use xlink:href="#wave-path" x="50" y="9"></use>
+                </g>
+            </svg>
+
+        </section>
+
+
+        <section id="challenges" class="recent-posts section  about section">
+
+            <div class="container section-title" data-aos="fade-up">
+
+                <h2>Challenges</h2>
+            </div>
+            <div class="container">
+
+                <div class="row gy-4">
+
+                    <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="col-lg-12 content" data-aos="fade-up" data-aos-delay="100">
+                            <h5 class="sub-title"> Turn Your Vision into Reality</h5>
+
+                            <ul>
+
+                                <li>
+                                <span>
+                                    Participants will be challenged to create IA innovative solutions by harnessing the capabilities of artificial intelligence.
+                                    Integrate advanced AI features into your applications using standardized interfaces that deliver agility, flexibility, and innovation.
+                                </span>
+                                </li>
+                                <li>
+                                    <span> Use cutting-edge AI tools and your unique skills to develop solutions. </span>
+                                </li>
+                                <li>
+                                    <span> Explore the <strong> Two thematic challenge areas </strong> where your innovation can make a difference.</span>
+                                </li>
+                                <li>
+                                    <div class="btn-registration">
+                                        <a href="{{ path('app_participants_new') }}" class="btn-register" target="_blank"> Apply Now </a>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+                    <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <article>
+
+                            <div class="post-img">
+                                <img src="{{ asset('assets/img/blog/blog-3.jpg') }}" alt="" class="img-fluid">
+                            </div>
+                            <h2 class="title">
+                                Lean Supplier Intelligence
+                            </h2>
+                            <p class="post-category"> Optimizing supplier performance and supply chain efficiency using smart data.</p>
+
+                        </article>
+                    </div>
+                    <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <article>
+
+                            <div class="post-img">
+                                <img src="{{ asset('assets/img/platform.jpg') }}" alt="" class="img-fluid">
+                            </div>
+
+                            <h2 class="title">
+                                Smart Warehouse Logistics Optimization
+                            </h2>
+                            <p class="post-category">enhancing warehouse efficiency with advanced technology.</p>
+
+                        </article>
+                    </div><!-- End post list item -->
+
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="whyjoin" class="services section">
+
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Why join us ? </h2>
+                <span class="styled-text">
+                    If you're wondering why you should apply, here are compelling reasons that make this Hackathon a must-attend event :
+                </span>
+            </div>
+
+            <div class="container">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-item  position-relative">
+                            <div class="icon">
+                                <i class="bi bi-rocket-takeoff" style="color: #0dcaf0;"></i>
+                            </div>
+                            <h3>Transform Ideas into Solutions 💡</h3>
+
+                            <p>
+                                Turn your creative concepts into practical, real-world solutions using cutting-edge AI technologies.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="bi bi-person-circle" style="color: #fd7e14;"></i>
+                            </div>
+                            <h3> Receive Expert Guidance 🌟</h3>
+                            <p>Work alongside mentors and technical experts who will help refine your ideas and guide you toward innovative solutions.
+                                .</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="bi bi-people-fill" style="color: #20c997;"></i>
+                            </div>
+                            <h3>Join a community of visionaries 🌍 </h3>
+                            <p>who are introducing AI into daily operations. Contribute your ideas and help shape the future of AI, being part of something bigger.
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="objectifs" class="features section">
+
+            <div class="container section-title" data-aos="fade-up">
+                <h2>AI Hackathon Objectives</h2>
+            </div>
+
+            <div class="container">
+
+                <ul class="nav nav-tabs row  d-flex" data-aos="fade-up" data-aos-delay="100">
+                    <li class="nav-item col-3">
+                        <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
+                            <i class="bi bi-person"></i>
+                            <h4 class="d-none d-lg-block">Collaborate as a Team and Learn</h4>
+                        </a>
+                    </li>
+                    <li class="nav-item col-3">
+                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
+                            <i class="bi bi-lightbulb"></i>
+                            <h4 class="d-none d-lg-block">Explore New AI ideas Applications</h4>
+                        </a>
+                    </li>
+                    <li class="nav-item col-3">
+                        <a class="nav-link " data-bs-toggle="tab" data-bs-target="#features-tab-3">
+                            <i class="bi bi-rocket"></i>
+                            <h4 class="d-none d-lg-block">Boost Youth Creativity</h4>
+                        </a>
+                    </li>
+                    <li class="nav-item col-3">
+                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-4">
+                            <i class="bi bi-gear"></i>
+                            <h4 class="d-none d-lg-block">Improve Skills through Practical Challenges</h4>
+                        </a>
+                    </li>
+                </ul><!-- End Tab Nav -->
+
+            </div>
+
+        </section>
+
+        <section id="timeline" class="section">
+            <div class="container section-title" data-aos="fade-up">
+                <h2 style="margin-bottom: 2rem">Timeline</h2>
+            </div>
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="horizontal-timeline">
+                            <ul class="list-inline items d-flex flex-column flex-lg-row justify-content-center align-items-stretch">
+                                <li class="list-inline-item items-list mb-4 mx-lg-4">
+                                    <div class="px-3 text-center">
+                                        <div class="event-date badge bg-success">27 January 2025 - 14 February 2025</div>
+                                        <h5 >Registration</h5>
+                                        <p class="text-muted">
+                                            You can apply with your team to participate in VEO AI Hackathon challenge.
+                                            Explore further to find out about the challenges, mentors, and prizes. 💡✨
+                                        </p>
+                                    </div>
+                                </li>
+
+                                <li class="list-inline-item items-list mb-4 mx-lg-4">
+                                    <div class="px-3 text-center">
+                                        <div class="event-date badge bg-success">22 February 2025</div>
+                                        <h5>Hackathon Day</h5>
+                                        <p class="text-muted">
+                                            The moment you’ve been waiting for! Meet your teammates, engage with like-minded AI enthusiasts,
+                                            attend game-changing workshops, and dive into solving real-world challenges with AI. 🌟
+                                        </p>
+                                    </div>
+                                </li>
+
+                                <li class="list-inline-item items-list mb-4 mx-lg-4">
+                                    <div class="px-3 text-center">
+                                        <div class="event-date badge bg-success">23 February 2025</div>
+                                        <h5>Award Ceremony</h5>
+                                        <p class="text-muted">
+                                            Time to celebrate! Join us to honor creativity, applaud ambitious ideas,
+                                            and reward the most innovative projects. 🏆
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="recompences" class="pricing section">
+
+
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Prizes & awards</h2>
+                <span class="styled-text">
+                    We’ve endowed a <strong> 6000 <sup> TND </sup> prize pool for this event </strong>. Compete and win in either of the challenges .
+                </span>
+            </div>
+
+            <div class="container">
+
+                <div class="row gy-3 justify-content-center">
+
+
+                    <div class="col-xl-3 col-lg-6 " data-aos="fade-up" data-aos-delay="200">
+                        <div class="pricing-item featured ">
+                            <h3>Challenge 1 Winners</h3>
+                            <h4>3000 <sup>TND</sup></h4>
+
+                            <div class="btn-wrap">
+                                <a href="{{ path('app_participants_new') }}" target="_blank" class="btn-buy"> Apply now</a>
+                            </div>
+                        </div>
+                    </div><!-- End Pricing Item -->
+
+
+                    <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="pricing-item featured">
+{#                            <span class="advanced">Advanced</span>#}
+                            <h3>Challenge 2 Winners </h3>
+                            <h4>3000 <sup>TND</sup></h4>
+
+                            <div class="btn-wrap">
+                                <a href="{{ path('app_participants_new') }}" target="_blank" class="btn-buy"> Apply now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="contact" class="call-to-action section dark-background">
+
+            <div class="container">
+
+                <div class="row" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="col-xl-9 text-center text-xl-start">
+                        <h3> Contact & FAQ</h3>
+                        <p>
+                            Do you have any questions or need more information about VEO AI Hackathon Project? <br>
+                            Feel free to reach out to us!
+                            Send us an email at : </p> <p> <strong style="text-decoration: underline"> hackathon.tunis@veoworldwide.com </strong></p>
+                    </div>
+                    <div class="col-xl-3 cta-btn-container text-center">
+                        <a class="cta-btn align-middle" href="{{ path('app_participants_new') }}" target="_blank"> Apply now </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="mentorsjury" class="team section">
+
+            <div class="container section-title mt-0" data-aos="fade-up">
+                <h2>Our Mentors</h2>
+            </div>
+            <div class="container mt-0" >
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4"  data-aos="fade-up" data-aos-delay="100">
+                    <!-- Card 1 -->
+                    <div class="col" >
+
+                        <div class="h-100 team-member">
+                            <div class="member-img">
+                                <img src="{{ asset('assets/img/team/noura.png') }}" class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>Jedidi Noura </h4>
+                                <span>Site Manager </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="col">
+                        <div class="team-member h-100">
+                            <div class="member-img">
+                                <img src="{{ asset('assets/img/team/fatenFrioui.png') }}" class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>Frioui Faten</h4>
+                                <span>QA Team Leader </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col">
+                        <div class="team-member h-100">
+                            <div class="member-img">
+                                <img src="{{ asset('assets/img/team/youssef.png') }}" class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>Laabidi Youssef </h4>
+                                <span>Project Manager</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="col">
+                        <div class="team-member">
+                            <div class="member-img">
+                                <img src="{{ asset('assets/img/team/dorra.png') }}" class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>Trabelsi Dorra </h4>
+                                <span>Data & AI solutions architect</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="col">
+                        <div class="team-member  h-100">
+                            <div class="member-img">
+                                <img src="{{ asset('assets/img/team/hamza.png') }}" class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>Abidi Hamza </h4>
+                                <span>Business analyst hr</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </section>
+
+{#        <section id="mentorsjury" class="team section mt-0">#}
+
+{#            <!-- Section Title -->#}
+{#            <div class="container section-title" data-aos="fade-up">#}
+{#                <h2>Our jury</h2>#}
+{#            </div><!-- End Section Title -->#}
+
+{#            <div class="container">#}
+
+{#                <div class="row gy-4 justify-content-center">#}
+
+{#                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">#}
+{#                        <div class="team-member">#}
+{#                            <div class="member-img">#}
+{#                                <img src="assets/img/no-image.png" class="img-fluid" alt="">#}
+{#                            </div>#}
+{#                            <div class="member-info">#}
+{#                                <h4> ----- </h4>#}
+{#                                <span> ----- </span>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div><!-- End Team Member -->#}
+
+{#                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">#}
+{#                        <div class="team-member">#}
+{#                            <div class="member-img">#}
+{#                                <img src="assets/img/no-image.png" class="img-fluid" alt="">#}
+
+{#                            </div>#}
+{#                            <div class="member-info">#}
+{#                                <h4> ----- </h4>#}
+{#                                <span> ----- </span>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div><!-- End Team Member -->#}
+
+
+{#                </div>#}
+
+{#            </div>#}
+
+{#        </section>#}
+
+
+    </main>
+
+
+{% endblock %}

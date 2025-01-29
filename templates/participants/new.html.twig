@@ -1,0 +1,364 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Participants{% endblock %}
+
+{% block body %}
+    <div class="preloader"></div>
+    <main class="main">
+        <section id="contact" class="contact section" style="padding-top: 150px;">
+
+            <div class="container section-title mb-0" data-aos="fade-up">
+
+                <h2>Registration</h2>
+                <span class="styled-text-form">
+                   Form your team and get ready to innovate!<br>
+                </span>
+                <span class="styled-text-form" >
+                    Registration is for groups only, not individuals. <strong> minimum of 3 members and can include up to 6 participants maximum. </strong>
+                </span>
+            </div>
+
+            <div class="container" data-aos="fade" data-aos-delay="100">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-8">
+
+                        <form id="add-participants" name="participants" method="post" class="php-email-form">
+
+                            <div class="participant" id="participant1">
+                                <h5 class="titleForm">Participant 1 <span class="required"> * </span></h5>
+                                <div class="row gy-4">
+                                    <div class="col-md-6">
+                                        <input type="text" id="participant1_nom" name="participant[1][nom]" required
+                                               maxlength="255" class="form-control" placeholder="First Name">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" id="participant1_prenom" name="participant[1][prenom]"
+                                               required maxlength="255" class="form-control" placeholder="Last Name">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <input type="email" id="participant1_email" name="participant[1][email]"
+                                               required maxlength="255" class="form-control email-input" placeholder="Email adress">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <select id="participant1_niveauEtude" name="participant[1][niveauEtude]"
+                                                required class=" niveauEtudeselect form-control">
+                                            <option value="" selected>Level of education</option>
+                                            <option value="Academic">Academic</option>
+                                            <option value="Professional">Professional</option>
+                                        </select>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div id="participantContainer"></div>
+
+                            <div class="row gy-4">
+                            <div class="form-group col-md-12" id="competences">
+
+                                <h5> Fields of Expertise <span class="required"> * </span> </h5>
+                                <p class="domaineexp">Please specify the areas of professional experience and/or qualifications.</p>
+                                <div class="checkbox-group col-md-12">
+                                    <label><input type="checkbox" class="form-check-input" name="expertise[]"
+                                                  value="Python (sklearn)"> Python (ML/DL/NLP)</label>
+                                    <label><input type="checkbox" class="form-check-input" name="expertise[]"
+                                                  value="Web technologies " > Web technologies  </label>
+                                    <label><input type="checkbox" class="form-check-input" name="expertise[]"
+                                                  value="optimization techniques" > optimization techniques  </label>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <input type="text" class="form-control" name="expertise_other"
+                                           placeholder="Others...">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="row gy-4">
+                                <div class="form-group col-md-12" id="comment">
+
+                                    <h5> Add a Comment </h5>
+                                    <p class="domaineexp">Have you joined an AI hackathon before?
+                                        If yes, feel free to share your experience! <br>
+                                        Do you have a favorite AI thematic you'd like to work on? </p>
+                                    <div class="checkbox-group col-md-12">
+                                        <textarea name="comment" placeholder="Add a comment..." class="form-control"></textarea>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12 text-center">
+
+                                <button id="submitBtn" disabled>Submit </button>
+                            </div>
+
+                        </form>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+
+
+    </main>
+
+
+   <script>
+       $(document).ready(function () {
+           $(".preloader").hide();
+
+           const maxParticipants = 6; // Total number of participants
+           const requiredParticipants = 3; // Minimum required participants
+           let allRequiredFilled = true;
+           let toastrDisplayed = false;
+           // Generate dynamic forms for participants (2 to 5)
+           for (let i = 2; i <= maxParticipants; i++) {
+               $("#participantContainer").append(`
+            <div class="participant" id="participant${i}" style="display: none;">
+                <h5 class="titleForm">Participant ${i} ${i <= requiredParticipants ? '<span class="required"> * </span>' : '(Optionnel)'}</h5>
+                <div class="row gy-4">
+                    <div class="col-md-6">
+                        <input type="text" id="participant${i}_nom" name="participant[${i}][nom]" ${i <= requiredParticipants ? 'required' : ''} maxlength="255" class="form-control" placeholder="First Name">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" id="participant${i}_prenom" name="participant[${i}][prenom]" ${i <= requiredParticipants ? 'required' : ''} maxlength="255" class="form-control" placeholder="Last Name">
+                    </div>
+                    <div class="col-md-12">
+                        <input type="email" id="participant${i}_email" name="participant[${i}][email]" ${i <= requiredParticipants ? 'required' : ''} maxlength="255" class="form-control email-input" placeholder="Email Adress">
+                    </div>
+                    <div class="col-md-12">
+                        <select id="participant${i}_niveauEtude" name="participant[${i}][niveauEtude]" ${i <= requiredParticipants ? 'required' : ''} class="niveauEtudeselect form-control">
+                            <option value="" selected>Level of education</option>
+                            <option value="Académique">Academic</option>
+                            <option value="Professionnel">Professional</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        `);
+           }
+
+           // Function to check if a form is filled
+           function isFormFilled(index) {
+               let filled = true;
+
+               $(`#participant${index} input, #participant${index} select`).each(function () {
+                   if ($(this).val().trim() === '') {
+                       filled = false;
+                   }
+               });
+
+               return filled;
+           }
+
+           // Function to validate email format
+           function isValidEmail(email) {
+               const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple email validation regex
+               return emailRegex.test(email);
+           }
+
+           function validateEmails() {
+               let allValid = true;
+               let emails = [];
+
+               $('.email-input').each(function () {
+                   const email = $(this).val().trim();
+
+                   // Validate format
+                   if (email !== '' && !isValidEmail(email)) {
+                       $(this).css('border-color', 'red'); // Invalid email → Red border
+                       allValid = false;
+                   }
+                   // Validate uniqueness
+                   else if (email !== '' && emails.includes(email)) {
+                       $(this).css('border-color', 'red'); // Duplicate → Red border
+                       allValid = false;
+                   }
+                   // Valid email
+                   else {
+                       $(this).css('border-color', ''); // Reset border
+                       emails.push(email);
+                   }
+               });
+
+               if (!allValid && !toastrDisplayed) {
+                   toastr.error('Please correct the entered email addresses before proceeding.', 'Erreur');
+                   toastrDisplayed = true; // Active l'indicateur pour empêcher d'autres affichages
+               }
+
+               if (allValid) {
+                   toastrDisplayed = false;
+               }
+
+               return allValid;
+           }
+
+           // Function to check if at least one checkbox is selected
+           function isAnyCheckboxChecked() {
+               return $('#competences input[type="checkbox"]:checked').length > 0;
+           }
+
+           // Function to check the state of the submit button
+           function checkSubmitButton() {
+               // Reset the allRequiredFilled flag
+               allRequiredFilled = true;
+
+               // Check if all required participants are filled
+               for (let i = 1; i <= requiredParticipants; i++) {
+                   if (!isFormFilled(i)) {
+                       allRequiredFilled = false;
+                       break;
+                   }
+               }
+
+               const emailsValid = validateEmails(); // Combined validation
+               // Check if at least one checkbox is selected
+               const checkboxesChecked = isAnyCheckboxChecked();
+
+               // Update submit button state
+               let buttonDisabled = !(allRequiredFilled && checkboxesChecked && emailsValid);
+               console.log(`Filled: ${allRequiredFilled}, Emails Valid: ${emailsValid}, Checkboxes: ${checkboxesChecked}`);
+               $('#submitBtn').prop('disabled', buttonDisabled);
+           }
+
+           // Event listener for input changes in participant forms
+           $('.participant input, .participant select').on('input change', function () {
+               for (let i = 1; i <= maxParticipants; i++) {
+                   if (isFormFilled(i) && i < maxParticipants) {
+                       $(`#participant${i + 1}`).fadeIn(); // Show the next form
+                   }
+               }
+               checkSubmitButton(); // Validate button state
+           });
+
+           // Event listener for changes in checkboxes
+           $('#competences input[type="checkbox"]').on('change', function () {
+               checkSubmitButton(); // Validate button state on checkbox change
+           });
+
+           // Real-time validation for emails
+           $('.email-input').on('input', function () {
+               validateEmails();
+               checkSubmitButton(); // Update button state
+
+               if (toastrDisplayed && validateEmails()) {
+                   toastrDisplayed = false;
+               }
+
+           });
+
+           $('#submitBtn').click(function (e) {
+               e.preventDefault();
+
+               $(".preloader").show();
+               // Récupérer tous les e-mails des champs input
+               let emails = [];
+
+               $('.email-input').each(function () {
+                   let email = $(this).val();
+                   if (email) {
+                       emails.push(email);
+                   }
+               });
+              console.log(emails);
+               if (emails.length > 0) {
+                   $.ajax({
+                       url: "/participants/check-emails", // La route Symfony
+                       method: "POST",
+                       data: { emails: emails },
+                       success: function (response) {
+
+                           $(".preloader").hide();
+                           $('.email-input').css("border", "");
+
+                           if (response.existingEmails.length > 0) {
+                               let existing = response.existingEmails.join(", ");
+                                // $("#emailError").show().text("These emails already exist: " + existing);
+                               $('.email-input').each(function () {
+                                   let email = $(this).val();
+                                   if (response.existingEmails.includes(email)) {
+                                       $(this).css("border", "1px solid red");
+                                   }
+                               });
+                               toastr.error('Participants with these email addresses are already registered. please check them before proceeding.', 'Error');
+
+                           } else {
+                                // $("#emailError").hide();
+                                // alert("All emails are unique!");
+
+                               let formData = $('#add-participants').serialize();
+                               console.log(formData);
+                               // AJAX call
+                               $.ajax({
+                                   url: '/participants/ajax/inscription',
+                                   type: 'POST',
+                                   data: formData,
+                                   success: function (response) {
+                                       $(".preloader").hide();
+                                       toastr.success('The registration was successfully completed.', 'Congratulations');
+                                       // $('#add-participants')[0].reset();
+                                   },
+                                   error: function (xhr) {
+                                       // Handle error response
+                                       alert('Error: ' + xhr.responseJSON.message);
+                                   }
+                               });
+                            }
+                       },
+                       error: function (xhr) {
+                           alert('Error: ' + xhr.responseJSON.message);
+                       }
+                   });
+               }
+               // else {
+               //     $("#emailError").show().text("Please enter at least one email.");
+               // }
+
+
+           });
+
+       });
+
+
+   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
