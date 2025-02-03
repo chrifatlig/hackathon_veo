@@ -43,6 +43,11 @@ class Participants
      */
     private $team;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $organization;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -106,6 +111,18 @@ class Participants
     public function setTeam(?Team $team): self
     {
         $this->team = $team;
+
+        return $this;
+    }
+
+    public function getOrganization(): ?string
+    {
+        return $this->organization;
+    }
+
+    public function setOrganization(string $organization): self
+    {
+        $this->organization = $organization;
 
         return $this;
     }

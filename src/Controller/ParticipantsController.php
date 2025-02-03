@@ -75,12 +75,13 @@ class ParticipantsController extends AbstractController
             $entityManager->persist($team);
             // Retrieve form data
             foreach ($data['participant'] as $participantData) {
-
+               // dd($participantData);
                 if($participantData['nom'] != "") {
                     $participant = new Participants();
                     $participant->setNom($participantData['nom']);
                     $participant->setPrenom($participantData['prenom']);
                     $participant->setEmail($participantData['email']);
+                    $participant->setOrganization($participantData['university_company']);
                     $participant->setNiveauEtude($participantData['niveauEtude']);
                     $participant->setTeam($team);
                     $entityManager->persist($participant);

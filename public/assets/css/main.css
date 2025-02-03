@@ -6,7 +6,7 @@
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
+:root {
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #2a2c39; /* Color for headings, subheadings and title throughout the website */
@@ -745,7 +745,7 @@ section,
 .hero p {
   max-width: 80%;
   animation-delay: 0.4s;
-  margin: 0 0 30px 0;
+  margin: 0 0 25px 0;
 }
 
 .hero .carousel-control-prev,
@@ -777,8 +777,8 @@ section,
 /*  border: 2px solid #3a913f;*/
 /*}*/
 .hero .btn-get-started {
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 15px;
   letter-spacing: 2px;
   display: inline-block;
   padding: 12px 32px;
@@ -793,15 +793,14 @@ section,
 }
 
 .hero .btn-learnmore {
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 15px;
   letter-spacing: 2px;
   display: inline-block;
   padding: 12px 32px;
   border-radius: 8px;
   transition: 0.5s;
   line-height: 1;
-  margin: 10px;
   animation-delay: 0.8s;
   color: var(--default-color);
   border: 2px solid #3a913f;
@@ -2712,9 +2711,9 @@ section,
   border-radius: 5px;
 }
 .checkbox-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px; /* Espacement entre les cases */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Espacement entre les cases */
   padding-bottom: 1rem;
 }
 .form-check-input[type=checkbox] {
